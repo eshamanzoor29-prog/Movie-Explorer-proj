@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Explorer</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+
+        <div class="logo">
+            <i class="fa-solid fa-film"></i>
+            <h2>Movie<span>Explorer</span></h2>
+        </div>
+
+        <div class="search-box">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search movies or TV Shows...">
+        </div>
+
+        <div class="nav-right">
+            <button id="favBtn">
+                <i class="fa-regular fa-heart"></i>
+                Favourites
+            </button>
+        </div>
+
+    </header>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav>
+
+        <ul>
+            <li id="homeBtn" class="active">Home</li>
+            <li id="moviesBtn">Movies</li>
+            <li id="tvBtn">TV Shows</li>
+            <li id="popularBtn">Popular</li>
+            <li id="topRatedBtn">Top Rated</li>
+            <li id="upcomingBtn">Upcoming</li>
+        </ul>
+
+    </nav>
+
+    <!-- ================= CATEGORY ================= -->
+
+    <section class="category">
+
+        <button class="active-category">All</button>
+        <button>Action</button>
+        <button>Comedy</button>
+        <button>Drama</button>
+        <button>Horror</button>
+        <button>Adventure</button>
+        <button>Animation</button>
+        <button>Romance</button>
+        <button>Sci-Fi</button>
+
+    </section>
+
+    <!-- ================= MOVIES ================= -->
+
+    <section class="movies">
+
+       <div class="section-title">
+    <h2 id="sectionTitle">🔥 Trending Movies</h2>
+</div>
+        <div class="movie-container" id="movieContainer"></div>
+
+    </section>
+
+    <!-- ================= PAGINATION ================= -->
+
+    <section class="pagination">
+
+        <button id="prevBtn">Previous</button>
+
+        <span class="page active-page" id="page1">1</span>
+        <span class="page" id="page2">2</span>
+        <span class="page" id="page3">3</span>
+
+        <button id="nextBtn">Next</button>
+
+    </section>
+
+    <!-- ================= LOADING ================= -->
+
+    <div id="loading" class="loading">
+        <i class="fa-solid fa-spinner fa-spin"></i>
+        Loading Movies...
+    </div>
+
+    <!-- ================= MODAL ================= -->
+
+    <div id="movieModal" class="modal">
+
+        <div class="modal-content">
+
+            <span id="closeModal">&times;</span>
+
+            <img id="modalPoster" src="" alt="Poster">
+
+            <div class="modal-info">
+
+                <h2 id="modalTitle"></h2>
+
+                <p id="modalRating"></p>
+                <p id="modalDate"></p>
+                <p id="modalLanguage"></p>
+                <p id="modalGenres"></p>
+                <p id="modalBudget"></p>
+                <p id="modalCompany"></p>
+                <p id="modalSpokenLanguage"></p>
+                <p id="modalOverview"></p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+        <p>© 2026 Movie Explorer</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>

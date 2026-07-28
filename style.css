@@ -1,0 +1,565 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#5b0d0d;
+    color:white;
+}
+
+/* ================= HEADER ================= */
+
+header{
+    width:100%;
+    background:#000;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 60px;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.logo i{
+    color:#e50914;
+    font-size:32px;
+}
+
+.logo span{
+    color:#e50914;
+}
+
+.search-box{
+    width:420px;
+    background:#222;
+    border-radius:30px;
+    display:flex;
+    align-items:center;
+    padding:12px 18px;
+}
+
+.search-box i{
+    color:#aaa;
+}
+
+.search-box input{
+    width:100%;
+    background:none;
+    border:none;
+    outline:none;
+    color:white;
+    margin-left:10px;
+}
+
+.search-box input::placeholder{
+    color:#999;
+}
+
+.nav-right button{
+    background:#e50914;
+    color:white;
+    border:none;
+    padding:10px 22px;
+    border-radius:30px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.nav-right button:hover{
+    background:white;
+    color:#e50914;
+}
+
+/* ================= NAV ================= */
+
+nav{
+    background:#181818;
+    padding:15px;
+}
+
+nav ul{
+    display:flex;
+    justify-content:center;
+    gap:35px;
+    list-style:none;
+    flex-wrap:wrap;
+}
+
+nav li{
+    cursor:pointer;
+    transition:.3s;
+}
+
+nav li:hover,
+.active{
+    color:#e50914;
+}
+
+/* ================= CATEGORY ================= */
+
+.category{
+    width:90%;
+    margin:35px auto;
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.category button{
+    background:#222;
+    color:white;
+    border:none;
+    padding:10px 20px;
+    border-radius:25px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.category button:hover,
+.active-category{
+    background:#e50914 !important;
+}
+
+/* ================= MOVIES ================= */
+
+.movies{
+    width:90%;
+    margin:auto;
+}
+
+.section-title{
+    margin-bottom:25px;
+}
+
+.movie-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+}
+
+.movie-card{
+    background:#1b1b1b;
+    border-radius:12px;
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+    height:100%;
+    transition:.3s;
+    position:relative;
+}
+
+.movie-card:hover{
+    transform:translateY(-8px);
+}
+
+.movie-card img{
+    width:100%;
+    height:250px;
+    object-fit: cover;
+    object-position: center top;
+    display:block;
+    background:#111;
+}
+
+.movie-info{
+    padding:15px;
+    display:flex;
+    flex-direction:column;
+    flex:1;
+}
+
+.movie-info h3{
+    margin-bottom:10px;
+    min-height:45px;
+}
+
+.movie-info p{
+    color:#bbb;
+    margin:6px 0;
+}
+/* ================= MOVIE BUTTONS ================= */
+
+/* Favourite Heart */
+
+.favMovieBtn{
+
+    position:absolute;
+    top:12px;
+    right:12px;
+
+    width:28px;
+    height:28px;
+
+    padding:0;
+
+    background:transparent;
+    border:none;
+    outline:none;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:18px;   /* 16px ya 18px try karo */
+
+    line-height:1;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    z-index:100;
+}
+
+.favMovieBtn:hover{
+
+    transform:scale(1.15);
+
+}
+
+
+/* View Details Button */
+
+.detailsBtn{
+
+    width:100%;
+
+    margin-top:auto;
+    margin-top:15px;
+
+    padding:10px 15px;
+
+    background:#e50914;
+    color:#fff;
+
+    border:none;
+    border-radius:30px;
+
+    font-size:14px;
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.detailsBtn:hover{
+
+    background:#fff;
+    color:#e50914;
+
+}
+
+
+/* ================= PAGINATION ================= */
+
+.pagination{
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:12px;
+
+    margin:50px 0;
+
+}
+
+.pagination button{
+
+    background:#e50914;
+    color:white;
+
+    border:none;
+
+    padding:10px 22px;
+
+    border-radius:6px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.pagination button:hover{
+
+    background:white;
+    color:#e50914;
+
+}
+
+.pagination button:disabled{
+
+    background:#666;
+    cursor:not-allowed;
+
+}
+
+.page{
+
+    width:40px;
+    height:40px;
+
+    border-radius:50%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:#222;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.page:hover,
+.active-page{
+
+    background:#e50914;
+
+}
+
+
+/* ================= LOADING ================= */
+
+.loading{
+
+    display:none;
+
+    text-align:center;
+
+    font-size:22px;
+
+    padding:40px;
+
+}
+/* ================= MODAL ================= */
+
+.modal{
+
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.8);
+
+    justify-content:center;
+    align-items:center;
+
+    z-index:9999;
+
+}
+
+.modal-content{
+
+    width:850px;
+    max-width:90%;
+
+    background:#1b1b1b;
+
+    display:flex;
+    gap:25px;
+
+    padding:25px;
+
+    border-radius:12px;
+
+    position:relative;
+
+}
+
+.modal-content img{
+
+    width:280px;
+
+    border-radius:10px;
+
+}
+
+.modal-info{
+
+    flex:1;
+
+}
+
+.modal-info h2{
+
+    color:#e50914;
+
+    margin-bottom:15px;
+
+}
+
+.modal-info p{
+
+    margin:12px 0;
+
+    line-height:1.7;
+
+}
+
+#closeModal{
+
+    position:absolute;
+
+    top:10px;
+
+    right:18px;
+
+    font-size:34px;
+
+    cursor:pointer;
+
+}
+
+#closeModal:hover{
+
+    color:#e50914;
+
+}
+
+
+/* ================= FOOTER ================= */
+
+footer{
+
+    background:#000;
+
+    color:#aaa;
+
+    text-align:center;
+
+    padding:25px;
+
+    margin-top:40px;
+
+}
+
+
+/* ================= TABLET ================= */
+
+@media(max-width:900px){
+
+    header{
+
+        flex-direction:column;
+
+        gap:15px;
+
+        padding:20px;
+
+    }
+
+    .search-box{
+
+        width:100%;
+
+    }
+
+    .movie-container{
+
+        grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+
+    }
+
+    .modal-content{
+
+        flex-direction:column;
+
+        text-align:center;
+
+    }
+
+    .modal-content img{
+
+        width:220px;
+
+        margin:auto;
+
+    }
+
+}
+
+
+/* ================= MOBILE ================= */
+
+@media(max-width:600px){
+
+    .logo h2{
+
+        font-size:22px;
+
+    }
+
+    .nav-right{
+
+        width:100%;
+
+    }
+
+    .nav-right button{
+
+        width:100%;
+
+    }
+
+    .movie-container{
+
+        grid-template-columns:1fr;
+
+    }
+
+    /*.movie-card img{
+
+        height:280px;
+
+    }*/
+.movie-card img{
+
+    width:100%;
+    height: 360px;      /* 250 se 340 kar do */
+
+    object-fit:cover;
+    object-position:center top;
+
+    display:block;
+
+    background:#111;
+
+}
+
+
+
+
+
+
+
+    .detailsBtn{
+
+        font-size:13px;
+
+        padding:10px;
+
+    }
+
+    .pagination{
+
+        flex-wrap:wrap;
+
+    }
+
+}
